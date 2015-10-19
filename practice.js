@@ -284,6 +284,7 @@ function MakePerson(name, birthday, ssn) {
       cardNum: cardNum,
       cardExp: cardExp
     };
+    return newCard;
   }
   
   
@@ -297,5 +298,20 @@ function MakePerson(name, birthday, ssn) {
 */
 
   //Code Here
+  function bindCard(MakePerson, MakeCard) {
+    var eachItem;
+    var newObj = {};
+      for (eachItem in MakePerson) {
+        newObj[eachItem] = MakePerson[eachItem];
+      }
+      for (eachItem in MakeCard) {
+        newObj[eachItem] = MakeCard[eachItem];
+      }
+      return newObj;   
+  }
+  
+var person = MakePerson('Odie', 'Mar 25', '000000000');
+var card = MakeCard('Visa', '123456789', 'Feb 2019');
 
-
+var fullPerson = bindCard(person, card);
+console.log(fullPerson);
