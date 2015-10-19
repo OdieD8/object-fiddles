@@ -166,15 +166,23 @@ var user = {
     birthday: undefined,
     username: 'tylermcginnis33',
     age: 0
-}
+};
 /*Above you're given a user object. Loop through the user object checking to make sure
 that each value is truthy. If it's not truthy, remove it from the object. */
 
   //Code Here
+ for (var eachItem in user) {
+   if(!!(user[eachItem]) === false) {
+    delete user[eachItem];
+   } 
+ } 
+ 
 
 //Once you get your truthy Object, Change the remaining values in the object to be specific to you (name: 'your name', username: 'your username'), rather than my information.
 
   //Code Here
+user.name = 'Odie de Moura';
+user.username = 'OdieD8';
 
 
 
@@ -221,17 +229,27 @@ user.sayName();
 //Create an empty object called methodCollection.
 
   //Code Here
+var methodCollection = {};
+
 
 /*Now add two methods (functions that are properties on objects) to your methodCollection
 object. One called 'alertHello' which alerts 'hello' and another method called logHello
  which logs 'hello' to the console. */
 
   //Code Here
+methodCollection.alertHello = function() {
+  alert('hello');
+};
+
+methodCollection.logHello = function() {
+  console.log('hello');
+};
 
 //Now call your alertHello and logHello methods.
 
   //Code Here
-
+methodCollection.alertHello();
+methodCollection.logHello();
 
 
 //NEXT PROBLEM
